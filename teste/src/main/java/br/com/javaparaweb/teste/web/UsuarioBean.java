@@ -13,15 +13,16 @@ import javax.faces.context.FacesContext;
 @RequestScoped
 public class UsuarioBean {
 
-	private String ome;
+	private String nome;
 	private String email;
 	private String senha;
 	private String confirmaSenha;
-	public String getOme() {
-		return ome;
+	
+	public String getNome() {
+		return nome;
 	}
-	public void setOme(String ome) {
-		this.ome = ome;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	public String getEmail() {
 		return email;
