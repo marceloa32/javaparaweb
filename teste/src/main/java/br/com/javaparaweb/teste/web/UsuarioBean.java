@@ -1,12 +1,16 @@
 package br.com.javaparaweb.teste.web;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 
 /**
  * Pagina 85, Listagem 2.6 
  *
  */
+@ManagedBean(name="usuarioBean")
+@RequestScoped
 public class UsuarioBean {
 
 	private String ome;
