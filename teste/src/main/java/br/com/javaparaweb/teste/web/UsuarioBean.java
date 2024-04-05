@@ -1,5 +1,8 @@
 package br.com.javaparaweb.teste.web;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+
 /**
  * Pagina 85, Listagem 2.6 
  *
@@ -35,5 +38,30 @@ public class UsuarioBean {
 		this.confirmaSenha = confirmaSenha;
 	}
 
+	/**
+	 * Pagina 87, Listagem 2.7
+	 * @return
+	 */
+	public String novo() {
+		
+		//return String: vai para pagina indicada
+		return "usuario";
+	}
+	
+	
+	/**
+	 * Pagina 87, Listagem 2.7
+	 * @return
+	 */
+	public String salvar() {
+		
+		FacesContext context = FacesContext.getCurrentInstance();
+		if(!this.senha.equalsIgnoreCase(this.confirmaSenha)) {
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Senha confirmada incorretamente", ""));
+			return "usuario";
+		}
+		//return null: pagina nao muda
+		return "mostrausuario";
+	}
 
 }
